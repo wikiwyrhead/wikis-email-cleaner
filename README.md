@@ -1,48 +1,41 @@
 # Wikis Email Cleaner
 
-A professional email cleaning tool for The Newsletter Plugin. Validates emails, unsubscribes invalid ones, logs actions, and exports to CSV. Includes admin interface, scheduled scans, and email alerts.
+A professional email cleaning tool for The Newsletter Plugin. Validates emails, unsubscribes invalid ones, logs actions, and exports to CSV. Includes admin interface, scheduled scans, revalidation, migration tool, and email alerts.
 
 ## Features
 
 - **Email Validation**: Comprehensive email validation including syntax, domain, MX record, and SMTP checks
+- **Revalidation System**: Periodically re-checks existing emails for validity, with admin UI for managing revalidation candidates and results
+- **Migration Tool**: Easily set up new database tables and migrate settings for revalidation from the admin page
 - **Newsletter Plugin Integration**: Seamless integration with The Newsletter Plugin using official hooks and filters
-- **Automated Cleaning**: Scheduled scans to automatically identify and unsubscribe invalid emails
+- **Automated Cleaning & Revalidation**: Scheduled scans and revalidation to automatically identify and unsubscribe invalid emails
 - **Real-time Validation**: Validate emails during subscription process to prevent invalid subscriptions
 - **Detailed Logging**: Complete audit trail of all validation activities with CSV export
 - **Admin Dashboard**: User-friendly interface for monitoring and managing email cleaning
-- **Configurable Settings**: Flexible configuration options for validation rules and automation
-- **Email Notifications**: Optional email reports after scan completion
+- **Configurable & Improved Settings**: Advanced configuration options for validation, revalidation, and automation with safer defaults
+- **Email Notifications**: Optional email reports after scan or revalidation completion
 
-## Requirements
+## Revalidation System
 
-- WordPress 5.5 or higher
-- PHP 7.4 or higher
-- The Newsletter Plugin (active)
-- MySQL database with table creation permissions
+The revalidation system allows you to periodically re-check the validity of existing emails. It includes:
+- Admin UI for viewing and managing revalidation candidates
+- Batch processor and queue manager for efficient handling
+- Scheduler for automated revalidation and queue population
+- Migration tool to set up new tables and migrate settings (trigger from admin page with `?action=migrate`)
 
-## Installation
+## Migration Tool
 
-1. **Download and Upload**
-   - Download the plugin files
-   - Upload to `/wp-content/plugins/wikis-email-cleaner/`
-   - Or install via WordPress admin dashboard
-
-2. **Activate Plugin**
-   - Go to WordPress Admin → Plugins
-   - Find "Wikis Email Cleaner" and click "Activate"
-
-3. **Configure Settings**
-   - Navigate to Email Cleaner → Settings
-   - Configure validation rules and automation preferences
-   - Save settings
+To set up the new revalidation system, visit the revalidation admin page and add `?action=migrate` to the URL. This will create the necessary database tables and migrate any required settings.
 
 ## Configuration
 
 ### General Settings
 
 - **Enable Automatic Cleaning**: Turn on/off scheduled email cleaning
+- **Enable Revalidation**: Turn on/off periodic revalidation of existing emails
 - **Minimum Valid Score**: Set threshold for email validity (0-100)
 - **Scan Frequency**: Choose how often to run automatic scans (hourly/daily/weekly)
+- **Revalidation Frequency**: Choose how often to run revalidation (daily/weekly/monthly)
 
 ### Validation Settings
 
@@ -54,7 +47,7 @@ A professional email cleaning tool for The Newsletter Plugin. Validates emails, 
 
 ### Notification Settings
 
-- **Send Email Notifications**: Receive email reports after scans
+- **Send Email Notifications**: Receive email reports after scans or revalidation
 - **Notification Email**: Email address for receiving reports
 
 ### Advanced Settings
@@ -83,6 +76,12 @@ A professional email cleaning tool for The Newsletter Plugin. Validates emails, 
 1. Enable "Automatic Cleaning" in settings
 2. Choose scan frequency
 3. Plugin will automatically scan and clean emails based on schedule
+
+### Revalidation
+
+1. Enable "Revalidation" in settings
+2. Choose revalidation frequency
+3. Plugin will automatically re-check email validity based on schedule
 
 ## Email Validation Process
 
@@ -146,6 +145,11 @@ The plugin creates two database tables:
    - Check if hosting provider blocks SMTP connections
    - Try disabling deep validation and use basic validation only
 
+4. **Revalidation not working**
+   - Ensure revalidation is enabled in settings
+   - Check if there are any pending revalidation tasks in the admin UI
+   - Verify that the revalidation frequency is set correctly
+
 ### Debug Mode
 
 To enable debug logging, add this to your wp-config.php:
@@ -185,6 +189,13 @@ For support and bug reports:
 This plugin is licensed under the GPLv2 or later.
 
 ## Changelog
+
+### Version 1.1.0
+- New revalidation system for periodic email re-checks
+- Migration tool for new DB tables and settings
+- Batch processor, queue manager, and scheduler for revalidation
+- Improved settings for safer defaults
+- Bug fix: undefined constant in revalidation admin
 
 ### Version 1.0.0
 - Initial release

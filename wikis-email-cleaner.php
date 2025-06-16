@@ -3,7 +3,7 @@
  * Plugin Name: Wikis Email Cleaner
  * Plugin URI: https://github.com/wikiwyrhead/wikis-email-cleaner
  * Description: A professional email cleaning tool for The Newsletter Plugin. Validates emails, unsubscribes invalid ones, logs actions, and exports to CSV. Includes admin interface, scheduled scans, and email alerts.
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: wikiwyrhead
  * Author URI: https://github.com/wikiwyrhead
  * License: GPLv2 or later
@@ -16,7 +16,7 @@
  * Network: false
  *
  * @package Wikis_Email_Cleaner
- * @version 1.0.0
+ * @version 1.1.0
  * @author wikiwyrhead
  * @license GPLv2 or later
  * @since 1.0.0
@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define plugin constants
-define( 'WIKIS_EMAIL_CLEANER_VERSION', '1.0.0' );
+define( 'WIKIS_EMAIL_CLEANER_VERSION', '1.1.0' );
 define( 'WIKIS_EMAIL_CLEANER_PLUGIN_FILE', __FILE__ );
 define( 'WIKIS_EMAIL_CLEANER_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WIKIS_EMAIL_CLEANER_PLUGIN_URL', plugin_dir_url( __FILE__ ) );

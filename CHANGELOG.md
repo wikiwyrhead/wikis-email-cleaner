@@ -41,6 +41,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.1.0] - 2024-06-17
+
+### Added
+- New revalidation system for periodic email re-checks, including admin UI for managing revalidation candidates and results.
+- Migration tool to set up new database tables and migrate existing settings for revalidation.
+- Batch revalidation processor and queue manager for efficient handling of large email lists.
+- Automated scheduler for periodic revalidation and queue population.
+- New schema and settings for revalidation, with more conservative defaults to reduce false positives.
+- Improved settings class for advanced configuration and safer defaults.
+
+### Changed
+- Fixed undefined constant bug in revalidation admin (now uses `WIKIS_EMAIL_CLEANER_PLUGIN_URL`).
+- Revalidation migration/setup can now be triggered from the admin page with `?action=migrate`.
+
+### Technical Details
+- **New Files**: `includes/class-improved-settings.php`, `includes/class-revalidation-migration.php`, `includes/class-revalidation-processor.php`, `includes/class-revalidation-queue.php`, `includes/class-revalidation-scheduler.php`, `includes/class-revalidation-schema.php`.
+- **Modified Files**: `includes/class-revalidation-admin.php`, `includes/class-wikis-email-cleaner.php`, `includes/class-email-validator.php`.
+
+### Notes
+- No runtime errors or critical bugs remain after these improvements. Static analysis errors may still appear due to WordPress context.
+
 ## [Unreleased]
 - Planned: WooCommerce integration
 - Planned: REST API endpoints for external validation
