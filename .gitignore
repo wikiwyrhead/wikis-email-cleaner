@@ -5,6 +5,7 @@ Thumbs.db
 .idea/
 *.sublime-workspace
 *.sublime-project
+*.code-workspace
 
 # === Node/Composer/Build Artifacts ===
 node_modules/
@@ -15,23 +16,31 @@ build/
 # === Logs and Debug ===
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 admin/logs/
 
-# === WordPress Specific ===
+# === WordPress Specific (for plugin dev) ===
 wp-content/uploads/
 wp-content/cache/
 wp-content/upgrade/
 wp-content/backups/
+wp-content/debug.log
 
 # === Language/Translation Files ===
 *.mo
 *.po
 *.pot
+languages/*.mo
+languages/*.po
 
 # === Backup/Temp Files ===
 *.bak
 *.tmp
 ~$*
+*.orig
+*.swp
+*.swo
 
 # === Environment/Secrets ===
 .env
@@ -44,9 +53,25 @@ coverage/
 # === Composer Lock (if not needed) ===
 composer.lock
 
-# === System Files ===
-*.swp
-*.swo
-
 # === Plugin Zip Archives ===
 *.zip
+
+# === System/OS Files ===
+Desktop.ini
+$RECYCLE.BIN/
+
+# === Misc ===
+*.DS_Store
+*.AppleDouble
+*.LSOverride
+Icon?
+._*
+
+# === Test/CI Artifacts ===
+phpunit.xml
+phpunit.result.cache
+/.phpunit.result.cache
+/.phpunit/
+
+# === Ignore local config ===
+local-config.php
