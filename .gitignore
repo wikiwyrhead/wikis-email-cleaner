@@ -1,0 +1,52 @@
+# === General OS and Editor Files ===
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# === Node/Composer/Build Artifacts ===
+node_modules/
+vendor/
+dist/
+build/
+
+# === Logs and Debug ===
+*.log
+npm-debug.log*
+admin/logs/
+
+# === WordPress Specific ===
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backups/
+
+# === Language/Translation Files ===
+*.mo
+*.po
+*.pot
+
+# === Backup/Temp Files ===
+*.bak
+*.tmp
+~$*
+
+# === Environment/Secrets ===
+.env
+.env.*
+secret-*.php
+
+# === Coverage Reports ===
+coverage/
+
+# === Composer Lock (if not needed) ===
+composer.lock
+
+# === System Files ===
+*.swp
+*.swo
+
+# === Plugin Zip Archives ===
+*.zip

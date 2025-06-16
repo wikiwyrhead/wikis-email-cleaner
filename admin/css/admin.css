@@ -1,0 +1,741 @@
+/**
+ * Admin styles for Wikis Email Cleaner
+ *
+ * @package Wikis_Email_Cleaner
+ * @since 1.0.0
+ */
+
+/* Dashboard Styles */
+.wikis-email-cleaner-dashboard {
+    max-width: 1200px;
+}
+
+.wikis-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.wikis-stat-card {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    transition: box-shadow 0.2s ease;
+}
+
+.wikis-stat-card:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.wikis-stat-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #23282d;
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+.stat-number.valid {
+    color: #46b450;
+}
+
+.stat-number.invalid {
+    color: #dc3232;
+}
+
+.wikis-stat-card small {
+    color: #666;
+    font-size: 12px;
+}
+
+/* Action Buttons */
+.wikis-actions {
+    margin-bottom: 30px;
+}
+
+.wikis-actions h2 {
+    margin-bottom: 15px;
+    color: #23282d;
+}
+
+.wikis-action-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.wikis-action-buttons .button {
+    min-height: 36px;
+    padding: 0 16px;
+}
+
+/* Content Sections */
+.wikis-schedule-info,
+.wikis-recent-scans,
+.wikis-progress-container,
+.wikis-results-container {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.wikis-schedule-info h2,
+.wikis-recent-scans h2,
+.wikis-progress-container h3,
+.wikis-results-container h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #23282d;
+}
+
+/* Enhanced Scan Results Styles */
+.wikis-scan-summary {
+    margin-bottom: 20px;
+}
+
+.wikis-scan-stats {
+    margin: 15px 0;
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 15px;
+    border-radius: 6px;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+}
+
+.stat-item.invalid {
+    background: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+.stat-item.warning {
+    background: #fff3cd;
+    border-color: #ffeaa7;
+    color: #856404;
+}
+
+.stat-item.action {
+    background: #d1ecf1;
+    border-color: #bee5eb;
+    color: #0c5460;
+}
+
+.stat-item .number {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.stat-item .label {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.wikis-categories {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.wikis-categories h5 {
+    margin: 0 0 10px 0;
+    color: #495057;
+}
+
+.category-list {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.category-list li {
+    margin-bottom: 5px;
+}
+
+.wikis-settings-used {
+    background: #e7f3ff;
+    border: 1px solid #b8daff;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.wikis-settings-used h5 {
+    margin: 0 0 10px 0;
+    color: #004085;
+}
+
+.wikis-settings-used ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.wikis-settings-used li {
+    margin-bottom: 5px;
+}
+
+.wikis-invalid-emails {
+    margin-top: 20px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.score {
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.score.score-low {
+    background: #d4edda;
+    color: #155724;
+}
+
+.score.score-medium {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.score.score-high {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.score.score-critical {
+    background: #dc3545;
+    color: #fff;
+}
+
+.risk-level {
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.risk-level.risk-low {
+    background: #d4edda;
+    color: #155724;
+}
+
+.risk-level.risk-medium {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.risk-level.risk-high {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.risk-level.risk-critical {
+    background: #dc3545;
+    color: #fff;
+}
+
+.issues-cell {
+    max-width: 300px;
+}
+
+.error-list, .warning-list {
+    margin-bottom: 10px;
+}
+
+.error-list ul, .warning-list ul {
+    margin: 5px 0 0 15px;
+    font-size: 12px;
+}
+
+.error-list li {
+    color: #721c24;
+}
+
+.warning-list li {
+    color: #856404;
+}
+
+/* Progress Bar */
+.wikis-progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #f1f1f1;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+    position: relative;
+}
+
+.wikis-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #0073aa, #005a87);
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+.wikis-progress-text {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #23282d;
+}
+
+/* Settings Tabs */
+.wikis-settings-tabs {
+    margin-top: 20px;
+}
+
+.nav-tab-wrapper {
+    border-bottom: 1px solid #ccd0d4;
+    margin-bottom: 0;
+}
+
+.nav-tab {
+    position: relative;
+    padding: 12px 16px;
+    font-weight: 600;
+}
+
+.nav-tab:focus {
+    box-shadow: none;
+}
+
+.tab-content {
+    display: none;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-top: none;
+    padding: 20px;
+    border-radius: 0 0 4px 4px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content h2 {
+    margin-top: 0;
+    color: #23282d;
+}
+
+/* Form Styles */
+.form-table th {
+    font-weight: 600;
+    color: #23282d;
+}
+
+.form-table td .description {
+    margin-top: 5px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Logs Page Styles */
+.wikis-logs-filters {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.filter-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filter-row input[type="text"],
+.filter-row input[type="date"],
+.filter-row select {
+    min-width: 150px;
+    height: 32px;
+}
+
+.wikis-bulk-actions {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.wikis-results-summary {
+    margin-bottom: 10px;
+    font-style: italic;
+    color: #666;
+}
+
+/* Status and Score Indicators */
+.wikis-status {
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.wikis-status.valid {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.wikis-status.invalid {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.wikis-score {
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+    display: inline-block;
+    min-width: 30px;
+    text-align: center;
+}
+
+.wikis-score.score-high {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.wikis-score.score-medium {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+.wikis-score.score-low {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Issues Display */
+.wikis-issues {
+    margin-bottom: 10px;
+}
+
+.wikis-issues ul {
+    margin: 5px 0 0 20px;
+    font-size: 12px;
+    list-style-type: disc;
+}
+
+.wikis-issues.errors {
+    color: #721c24;
+}
+
+.wikis-issues.warnings {
+    color: #856404;
+}
+
+.wikis-no-issues {
+    color: #6c757d;
+    font-style: italic;
+    font-size: 12px;
+}
+
+/* Action Status */
+.wikis-action-unsubscribed {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.wikis-action-none {
+    color: #6c757d;
+}
+
+.wikis-action-subscription-check,
+.wikis-action-confirmation-check {
+    color: #0073aa;
+}
+
+.wikis-action-bounced,
+.wikis-action-complained {
+    color: #dc3545;
+}
+
+/* Pagination */
+.wikis-pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.wikis-pagination .page-numbers {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 2px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    color: #0073aa;
+    border-radius: 3px;
+}
+
+.wikis-pagination .page-numbers:hover {
+    background: #f8f9fa;
+}
+
+.wikis-pagination .page-numbers.current {
+    background: #0073aa;
+    color: #fff;
+    border-color: #0073aa;
+}
+
+/* Empty States */
+.wikis-no-logs {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 40px;
+    text-align: center;
+    color: #6c757d;
+}
+
+.wikis-no-logs p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Loading States */
+.wikis-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.wikis-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #0073aa;
+    border-radius: 50%;
+    animation: wikis-spin 1s linear infinite;
+    margin-right: 8px;
+}
+
+@keyframes wikis-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .wikis-stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    
+    .wikis-stat-card {
+        padding: 15px;
+    }
+    
+    .stat-number {
+        font-size: 24px;
+    }
+    
+    .wikis-action-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .filter-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-row input,
+    .filter-row select {
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+/* Accessibility */
+.wikis-stat-card:focus-within {
+    outline: 2px solid #0073aa;
+    outline-offset: 2px;
+}
+
+.button:focus {
+    box-shadow: 0 0 0 2px #0073aa;
+}
+
+/* Donation Section */
+.wikis-donation-container {
+    background: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 20px 0;
+    position: relative;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.wikis-donation-dismiss {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 3px;
+    transition: color 0.2s ease;
+}
+
+.wikis-donation-dismiss:hover {
+    color: #dc3232;
+    background: #f8f9fa;
+}
+
+.wikis-donation-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.wikis-heart {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.wikis-donation-header h3 {
+    margin: 0;
+    color: #23282d;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.wikis-donation-message {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.wikis-donation-actions {
+    text-align: center;
+}
+
+.wikis-paypal-button {
+    background: #0070ba;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.wikis-paypal-button:hover {
+    background: #005ea6;
+    color: #fff;
+    text-decoration: none;
+}
+
+.wikis-paypal-button:focus {
+    outline: 2px solid #0073aa;
+    outline-offset: 2px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.wikis-paypal-button:visited {
+    color: #fff;
+}
+
+.wikis-paypal-email {
+    margin: 0;
+    color: #666;
+    font-size: 12px;
+}
+
+.wikis-paypal-email code {
+    background: #f1f1f1;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    color: #333;
+}
+
+/* Donation section responsive */
+@media (max-width: 768px) {
+    .wikis-donation-container {
+        margin: 15px 0;
+        padding: 15px;
+    }
+
+    .wikis-donation-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+
+    .wikis-paypal-button {
+        width: 100%;
+        max-width: 200px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .wikis-action-buttons,
+    .wikis-bulk-actions,
+    .wikis-logs-filters,
+    .wikis-donation-container {
+        display: none;
+    }
+
+    .wikis-stat-card {
+        break-inside: avoid;
+    }
+}
